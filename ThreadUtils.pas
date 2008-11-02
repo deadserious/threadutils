@@ -1,49 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
 //  unit ThreadUtils                                                          //
-//    Copyright 2006 by Arcana Technologies Incorporated                      //
-//    Written By Jason Southwell                                              //
+//    Copyright 2006, 2007, 2008 by Arcana Technologies Incorporated          //
+//    Original author: Jason Southwell                                        //
 //                                                                            //
 //  Description:                                                              //
 //    This unit provides helper classes and functions to simplify threaded    //
 //    programming.                                                            //
 //                                                                            //
-//    The ThreadRunner class and cooresponding global Run procedures make     //
-//    it easy to launch delphi procedures asyncronously in a thread.  To      //
-//    use, simply place the code which you wish to call in a thread into it's //
-//    own procedure or method and call Run(procname) where procname is your   //
-//    new procedure.                                                          //
+//  Project Homepage:                                                         //
+//    For lastest version, documentation, issue tracking etc. please see:     //
+//    http://code.google.com/p/threadutils/                                   //
 //                                                                            //
-//    The TThreadBatch class makes it simple to spead up many areas of your   //
-//    code by asyncronously calling many loosly related functions at the same //
-//    time and wait for all of them to complete before continuing.            //
-//                                                                            //
-//    This most often can speed up initialization code where you must         //
-//    perform multiple functions which all must be completed before finishing //
-//    the initialation, but they do not necessarily depend on each other.     //
-//                                                                            //
-//    For example, if you are filling in multiple lookups on a data entry     //
-//    form, you can often fill all of these simulanously using the a          //
-//    Threadbatch before showing the form.  If you have 6 lookup queries to   //
-//    process and each takes about 1 second to return, then that can mean a   //
-//    6 second delay in showing your form.  However, with a thread batch,     //
-//    the delay will only ever be as long as the longest query, or about a    //
-//    second.                                                                 //
-//                                                                            //
-//    This can help to improve Service, Web and Windows VCL applications.     //
-//    It is important to remember (particularly in VCL applications) that you //
-//    are operating in a threaded enviornment as soon as you implement the    //
-//    ThreadRunner or ThreadBatch.  Therefore, any code in the proc sent to   //
-//    the runner/batch must be thread safe.                                   //
-//                                                                            //
-//    See examples of how to deal with thread safety issues such as updating  //
-//    a VCL gui.                                                              //
-//                                                                            //
-//									                                                          //
-//  The latest version of this source code can always be found at:	          //
-//    http://www.arcanatech.com/downloads/threadutils.zip		                  //
-//									                                                          //
 //  Updates:                                                                  //
+//    11/02/2008 - Moved to Google Code.                                      //
 //    10/18/2006 - Released the ThreadUtils unit to Open Source.              //
 //                                                                            //
 //  License:                                                                  //
